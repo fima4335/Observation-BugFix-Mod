@@ -1,0 +1,19 @@
+Windows Registry Editor Version 5.00
+
+; Example registry fix for Observation resolution issues
+; 1. Replace WIDTH and HEIGHT with your actual resolution (e.g. 3440 and 1440)
+; 2. Save as .reg and double-click to import
+; 3. Always export the original key first as backup!
+;
+; Path: HKEY_CURRENT_USER\Software\No Code Studio\Observation
+
+[HKEY_CURRENT_USER\Software\No Code Studio\Observation]
+"Dropdown_Resolution"=dword:0000000e
+"Screenmanager Resolution Width"=dword:00000d70
+"Screenmanager Resolution Height"=dword:000005a0
+
+; Notes:
+; - 0x0d70 = 3440 decimal
+; - 0x05a0 = 1440 decimal
+; - Dropdown_Resolution = 14 (0xe) is a common working value reported by No Code support
+; - You can also set these values manually in regedit as Decimal
